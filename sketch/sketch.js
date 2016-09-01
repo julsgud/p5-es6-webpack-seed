@@ -15,16 +15,21 @@ const sketch = (p5) => {
 	}
 
 	p5.draw = () => {
-		p5.background(55);
+		p5.background(p5.color(252, 182, 157), 85);
+
 		// image
-		p5.image(img, p5.mouseX, p5.mouseY, p5.width/3, p5.height/2);
+		p5.push();
+		p5.translate(p5.width/2, p5.height/2)
+		p5.rotate(p5.frameCount/p5.TWO_PI);
+		p5.image(img, p5.mouseX - p5.width/6, p5.mouseY - p5.mouseY/4, p5.width/3, p5.height/2);
+		p5.pop();
 
 		// text
 		p5.fill(255);
 		p5.textFont(font);
-		p5.textSize(p5.width/5);
+		p5.textSize(p5.width/8);
 		p5.textAlign(p5.CENTER);
-		p5.text('Woop!', p5.width/2, p5.height/2);
+		p5.text('Stop it P5 panda', p5.width/2, p5.height/2);
 	}
 }
 
