@@ -10,8 +10,8 @@ const sketch = (p5) => {
 
 	p5.setup = () => {
 		p5.createCanvas(p5.windowWidth, p5.windowHeight);
-		font = p5.loadFont('assets/Alegreya-Regular.ttf');
-		img = p5.loadImage('assets/panda.jpg');
+		font = p5.loadFont('./assets/Alegreya-Regular.ttf');
+		img = p5.loadImage('./assets/panda.jpg');
 	}
 
 	p5.draw = () => {

@@ -1,7 +1,11 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+// var img = require('./src/assets/panda.jpg');
+
 module.exports = {
-    entry: './sketch/sketch.js',
+    entry: './src/sketch.js',
     output: {
-        path: './',
+        path: './dist',
         filename: 'bundle.js'
     },
     devServer: {
@@ -23,6 +27,16 @@ module.exports = {
         }]
     },
     resolve: {
-        extensions: [ '', '.js', '.css', '.styl', '.jpg', '.png', '.gif', '.ttf']
+        extensions: [ '', '.js', '.jpg', '.png', '.gif', '.ttf']
     },
+    plugins: [
+        new CopyWebpackPlugin([
+            {from: './src/assets', to: './assets' }
+        ]),
+        new HtmlWebpackPlugin({
+            title: 'p5-es6-webpack-seed',
+            template: './src/index.html',
+            inject: 'head'
+        })
+    ]
 }

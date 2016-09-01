@@ -4,7 +4,7 @@
   "description": "Create p5 sketches using es6 and bundle files with webpack",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack && webpack-dev-server --watch --inline --content-base dist"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,11 @@
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
+    "copy-webpack-plugin": "^3.0.1",
     "eslint": "^3.4.0",
     "eslint-loader": "^1.5.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
     "standard": "^8.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
